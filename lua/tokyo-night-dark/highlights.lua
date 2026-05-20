@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup(config)
-	local cp = require("tokyo-dark.palette")
+	local cp = require("tokyo-night-dark.palette")
 
 	local hl = {
 		-- Base Groups
