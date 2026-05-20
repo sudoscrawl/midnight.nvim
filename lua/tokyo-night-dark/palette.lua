@@ -73,3 +73,5 @@ local palette = {
   info = "#0da0ba",
   hint = "#0da0ba",
 }
+
+return palette
