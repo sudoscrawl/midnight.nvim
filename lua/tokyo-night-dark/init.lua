@@ -8,7 +8,7 @@ function M.setup()
 	vim.o.termguicolors = true
 	vim.g.colors_name = "tokyo-night-dark"
 
-	require("tokyo-night-dark.highlights").setup(M.config)
+	require("tokyo-night-dark.highlights").setup()
 
 end
 

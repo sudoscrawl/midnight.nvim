@@ -1,13 +1,13 @@
 local M = {}
 
-function M.setup(config)
+function M.setup()
 	local cp = require("tokyo-night-dark.palette")
 
 	local hl = {
 		-- Base Groups
 		Normal = {
 			fg = cp.fg,
-			bg = not config.transparent and cp.bg or "NONE",
+			bg = cp.bg or "NONE",
 		},
 		NormalFloat = {
 			fg = cp.fg,
@@ -15,7 +15,7 @@ function M.setup(config)
 		},
 		Comment = {
 			fg = cp.comment,
-			italic = config.italic_comments,
+			italic = true,
 		},
 		Constant = { fg = cp.orange },
 		String = { fg = cp.green1 },
