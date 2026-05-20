@@ -1,1 +1,1 @@
-require("tokyo-night-dark").setup()
+require("tokyo-night-dark").load()
