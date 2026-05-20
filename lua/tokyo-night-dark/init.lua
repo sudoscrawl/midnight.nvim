@@ -1,15 +1,25 @@
+local palette = require("tokyo-night-dark.palette")
+local highlights = require("tokyo-night-dark.highlights")
+
 local M = {}
 
-function M.setup()
-	if vim.g.colors_name then
-		vim.cmd("hi clear")
-	end
+local function load_highlights()
+  for group, opts in pairs(highlights.highlights) do
+    vim.api.nvim_set_hl(0, group, opts)
+  end
+end
 
-	vim.o.termguicolors = true
-	vim.g.colors_name = "tokyo-night-dark"
+function M.load()
+  vim.cmd("highlight clear")
 
-	require("tokyo-night-dark.highlights").setup()
+  if vim.fn.exists("syntax_on") then
+    vim.cmd("syntax reset")
+  end
 
+  vim.o.termguicolors = true
+  vim.g.colors_name = "yourtheme"
+
+  load_highlights()
 end
 
 return M
