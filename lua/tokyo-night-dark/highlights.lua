@@ -7,30 +7,48 @@ M.highlights = {
   -- Editor
   ----------------------------------------------------------------
   Normal = { fg = c.fg, bg = c.bg },
-  NormalFloat = { fg = c.fg, bg = c.bg_dark },
+  NormalFloat = { fg = c.fg, bg = c.bg_float },
 
   Cursor = { fg = c.bg, bg = c.fg },
-  CursorLine = { bg = c.bg_highlight },
-  CursorColumn = { bg = c.bg_highlight },
+
+  CursorLine = { bg = c.bg_cursorline },
+  CursorColumn = { bg = c.bg_cursorline },
 
   ColorColumn = { bg = c.bg_highlight },
-  Conceal = { fg = c.gray },
 
-  CursorLineNr = { fg = c.blue, bold = true },
+  CursorLineNr = {
+    fg = c.blue,
+    bold = true,
+  },
+
   LineNr = { fg = c.fg_gutter },
 
   SignColumn = { bg = c.bg },
-  FoldColumn = { fg = c.gray, bg = c.bg },
-  Folded = { fg = c.gray, bg = c.bg_dark },
+
+  Folded = {
+    fg = c.fg_comment,
+    bg = c.bg_fold,
+  },
+
+  FoldColumn = {
+    fg = c.fg_gutter,
+    bg = c.bg,
+  },
 
   VertSplit = { fg = c.border },
   WinSeparator = { fg = c.border },
 
   Visual = { bg = c.bg_visual },
-  VisualNOS = { bg = c.bg_visual },
 
-  Search = { fg = c.bg, bg = c.yellow },
-  IncSearch = { fg = c.bg, bg = c.orange },
+  Search = {
+    fg = c.white,
+    bg = c.bg_search,
+  },
+
+  IncSearch = {
+    fg = c.white,
+    bg = c.blue1,
+  },
 
   MatchParen = {
     fg = c.blue,
@@ -39,7 +57,7 @@ M.highlights = {
 
   Pmenu = {
     fg = c.fg,
-    bg = c.bg_dark,
+    bg = c.bg_float,
   },
 
   PmenuSel = {
@@ -47,21 +65,18 @@ M.highlights = {
     bg = c.bg_highlight,
   },
 
-  PmenuSbar = { bg = c.bg_dark },
-  PmenuThumb = { bg = c.gray },
-
   StatusLine = {
     fg = c.fg,
-    bg = c.bg_dark,
+    bg = c.bg_statusline,
   },
 
   StatusLineNC = {
-    fg = c.gray,
-    bg = c.bg_dark,
+    fg = c.fg_dark,
+    bg = c.bg_statusline,
   },
 
   TabLine = {
-    fg = c.gray,
+    fg = c.fg_dark,
     bg = c.bg_dark,
   },
 
@@ -75,12 +90,6 @@ M.highlights = {
   },
 
   Directory = { fg = c.blue },
-
-  ErrorMsg = { fg = c.error },
-  WarningMsg = { fg = c.warning },
-
-  Question = { fg = c.green },
-  MoreMsg = { fg = c.green },
 
   NonText = { fg = c.fg_gutter },
   Whitespace = { fg = c.fg_gutter },
@@ -96,20 +105,26 @@ M.highlights = {
   },
 
   Constant = { fg = c.red1 },
+
   String = { fg = c.green1 },
   Character = { fg = c.green1 },
+
   Number = { fg = c.red1 },
   Boolean = { fg = c.orange },
   Float = { fg = c.red1 },
 
-  Identifier = { fg = c.white },
+  Identifier = { fg = c.fg },
+
   Function = { fg = c.blue },
 
   Statement = { fg = c.magenta },
+
   Conditional = { fg = c.magenta },
   Repeat = { fg = c.magenta },
   Label = { fg = c.magenta },
+
   Operator = { fg = c.cyan2 },
+
   Keyword = {
     fg = c.magenta,
     italic = true,
@@ -119,26 +134,26 @@ M.highlights = {
 
   PreProc = { fg = c.cyan_dark },
   Include = { fg = c.cyan },
+
   Define = { fg = c.magenta },
 
-  Type = { fg = c.cyan_dark },
+  Type = { fg = c.white },
+  Structure = { fg = c.white },
+  Typedef = { fg = c.white },
+
   StorageClass = { fg = c.magenta },
-  Structure = { fg = c.cyan_dark },
-  Typedef = { fg = c.cyan_dark },
 
   Special = { fg = c.cyan },
   SpecialChar = { fg = c.cyan2 },
+
   Tag = { fg = c.red },
-  Delimiter = { fg = c.cyan2 },
-  SpecialComment = { fg = c.gray_light },
+
+  Delimiter = { fg = c.fg_gutter },
 
   Debug = { fg = c.red },
 
-  Underlined = { underline = true },
-  Bold = { bold = true },
-  Italic = { italic = true },
-
   Error = { fg = c.error },
+
   Todo = {
     fg = c.yellow,
     bold = true,
@@ -173,12 +188,12 @@ M.highlights = {
   },
 
   ----------------------------------------------------------------
-  -- Git
+  -- Diff
   ----------------------------------------------------------------
   DiffAdd = { bg = c.diff_add },
   DiffChange = { bg = c.diff_change },
   DiffDelete = { bg = c.diff_delete },
-  DiffText = { bg = c.blue1 },
+  DiffText = { bg = c.diff_text },
 
   GitSignsAdd = { fg = c.git_add },
   GitSignsChange = { fg = c.git_change },
@@ -187,38 +202,41 @@ M.highlights = {
   ----------------------------------------------------------------
   -- Treesitter
   ----------------------------------------------------------------
-  ["@annotation"] = { fg = c.blue },
-  ["@attribute"] = { fg = c.red },
-  ["@boolean"] = { fg = c.orange },
-  ["@character"] = { fg = c.green1 },
-  ["@character.special"] = { fg = c.cyan2 },
+  ["@variable"] = { fg = c.fg },
+  ["@variable.builtin"] = { fg = c.red },
+  ["@variable.member"] = { fg = c.cyan },
+  ["@variable.parameter"] = { fg = c.red1 },
 
-  ["@comment"] = {
-    fg = c.fg_comment,
-    italic = true,
-  },
+  ["@parameter"] = { fg = c.red1 },
+  ["@parameter.reference"] = { fg = c.red1 },
 
-  ["@conditional"] = { fg = c.magenta },
+  ["@property"] = { fg = c.cyan },
+  ["@field"] = { fg = c.cyan },
+
   ["@constant"] = { fg = c.red1 },
   ["@constant.builtin"] = { fg = c.orange },
   ["@constant.macro"] = { fg = c.red1 },
 
-  ["@constructor"] = { fg = c.cyan_dark },
+  ["@string"] = { fg = c.green1 },
+  ["@string.escape"] = { fg = c.cyan2 },
+  ["@string.regex"] = { fg = c.cyan2 },
 
-  ["@debug"] = { fg = c.red },
-  ["@define"] = { fg = c.magenta },
+  ["@character"] = { fg = c.green1 },
+  ["@character.special"] = { fg = c.cyan2 },
 
-  ["@exception"] = { fg = c.magenta },
-
-  ["@field"] = { fg = c.green1 },
+  ["@number"] = { fg = c.red1 },
+  ["@boolean"] = { fg = c.orange },
   ["@float"] = { fg = c.red1 },
 
   ["@function"] = { fg = c.blue },
-  ["@function.builtin"] = { fg = c.cyan_dark },
   ["@function.call"] = { fg = c.blue },
+  ["@function.builtin"] = { fg = c.cyan_dark },
   ["@function.macro"] = { fg = c.cyan_dark },
 
-  ["@include"] = { fg = c.cyan },
+  ["@method"] = { fg = c.blue },
+  ["@method.call"] = { fg = c.blue },
+
+  ["@constructor"] = { fg = c.cyan },
 
   ["@keyword"] = {
     fg = c.magenta,
@@ -226,92 +244,91 @@ M.highlights = {
   },
 
   ["@keyword.function"] = { fg = c.magenta },
-  ["@keyword.operator"] = { fg = c.magenta },
+
   ["@keyword.return"] = {
     fg = c.magenta,
     italic = true,
   },
 
+  ["@conditional"] = { fg = c.magenta },
+  ["@repeat"] = { fg = c.magenta },
   ["@label"] = { fg = c.magenta },
+  ["@exception"] = { fg = c.magenta },
 
-  ["@method"] = { fg = c.blue },
-  ["@method.call"] = { fg = c.blue },
-
-  ["@namespace"] = { fg = c.cyan_dark },
-
-  ["@none"] = {},
-
-  ["@number"] = { fg = c.red1 },
   ["@operator"] = { fg = c.cyan2 },
 
-  ["@parameter"] = { fg = c.red1 },
-  ["@parameter.reference"] = { fg = c.red1 },
-
-  ["@preproc"] = { fg = c.cyan_dark },
-
-  ["@property"] = { fg = c.cyan },
-
-  ["@punctuation.bracket"] = { fg = c.blue },
-  ["@punctuation.delimiter"] = { fg = c.cyan2 },
-  ["@punctuation.special"] = { fg = c.cyan2 },
-
-  ["@repeat"] = { fg = c.magenta },
+  ["@type"] = { fg = c.white },
+  ["@type.builtin"] = { fg = c.cyan },
+  ["@type.definition"] = { fg = c.white },
 
   ["@storageclass"] = { fg = c.magenta },
 
-  ["@string"] = { fg = c.green1 },
-  ["@string.escape"] = { fg = c.cyan2 },
-  ["@string.regex"] = { fg = c.cyan2 },
-  ["@string.special"] = { fg = c.cyan },
+  ["@namespace"] = { fg = c.cyan_dark },
 
-  ["@symbol"] = { fg = c.cyan },
+  ["@include"] = { fg = c.cyan },
+
+  ["@annotation"] = { fg = c.blue },
+  ["@attribute"] = { fg = c.red1 },
 
   ["@tag"] = { fg = c.red },
   ["@tag.attribute"] = { fg = c.magenta },
-  ["@tag.delimiter"] = { fg = c.purple },
+  ["@tag.delimiter"] = { fg = c.magenta_dark },
+
+  ["@punctuation.bracket"] = { fg = c.fg_gutter },
+  ["@punctuation.delimiter"] = { fg = c.fg_gutter },
+  ["@punctuation.special"] = { fg = c.cyan2 },
+
+  ["@comment"] = {
+    fg = c.fg_comment,
+    italic = true,
+  },
 
   ["@text"] = { fg = c.fg },
-  ["@text.strong"] = { bold = true },
-  ["@text.emphasis"] = { italic = true },
-  ["@text.underline"] = { underline = true },
-  ["@text.strike"] = { strikethrough = true },
 
-  ["@text.title"] = {
-    fg = c.blue,
+  ["@text.strong"] = {
+    fg = c.white,
     bold = true,
   },
 
-  ["@text.literal"] = { fg = c.green1 },
+  ["@text.emphasis"] = {
+    fg = c.white,
+    italic = true,
+  },
 
   ["@text.uri"] = {
     fg = c.cyan,
     underline = true,
   },
 
-  ["@text.math"] = { fg = c.orange },
-
-  ["@text.reference"] = { fg = c.cyan },
-
-  ["@text.environment"] = { fg = c.magenta },
-  ["@text.environment.name"] = { fg = c.blue },
-
-  ["@text.note"] = { fg = c.info },
-  ["@text.warning"] = { fg = c.warning },
-  ["@text.danger"] = { fg = c.error },
+  ["@text.title"] = {
+    fg = c.blue,
+    bold = true,
+  },
 
   ["@todo"] = {
     fg = c.yellow,
     bold = true,
   },
 
-  ["@type"] = { fg = c.cyan_dark },
-  ["@type.builtin"] = { fg = c.cyan_dark },
-  ["@type.definition"] = { fg = c.cyan_dark },
+  ----------------------------------------------------------------
+  -- LSP Semantic Tokens
+  ----------------------------------------------------------------
+  ["@lsp.type.class"] = { fg = c.white },
+  ["@lsp.type.type"] = { fg = c.white },
+  ["@lsp.type.namespace"] = { fg = c.cyan_dark },
 
-  ["@variable"] = { fg = c.white },
-  ["@variable.builtin"] = { fg = c.red },
-  ["@variable.member"] = { fg = c.cyan },
-  ["@variable.parameter"] = { fg = c.red1 },
+  ["@lsp.type.parameter"] = { fg = c.red1 },
+
+  ["@lsp.type.property"] = { fg = c.cyan },
+  ["@lsp.type.variable"] = { fg = c.fg },
+
+  ["@lsp.type.function"] = { fg = c.blue },
+  ["@lsp.type.method"] = { fg = c.blue },
+
+  ["@lsp.type.keyword"] = {
+    fg = c.magenta,
+    italic = true,
+  },
 }
 
 return M
