@@ -2,7 +2,8 @@
   Tokyo Night Dark
 </h1>
 
-![tokyo-dark.nvim](static/bnnr.jpg)
+| ![](static/bnnr.jpg) |
+| -------------------- |
 
 A Neovim colorscheme plugin ported from VS Code Tokyo Night Dark theme.
 
