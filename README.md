@@ -1,4 +1,6 @@
-# tokyo-dark.nvim
+<h1 style="text-align: center;">
+  Tokyo Night Dark
+</h1>
 
 ![tokyo-dark.nvim](static/bnnr.jpg)
 
