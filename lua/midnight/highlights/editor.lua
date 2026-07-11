@@ -27,7 +27,7 @@ function M.load(theme)
 		CursorLine = { bg = theme.cursorline },
 		CursorColumn = { bg = theme.cursorline },
 		ColorColumn = { bg = theme.cursorline },
-		LineNr = { bg = theme.cursorline },
+		LineNr = { bg = theme.bg },
 		CursorLineNr = { fg = theme.fg_subtle },
 		Visual = { bg = theme.selection },
 		VisualNOS = { bg = theme.selection },
