@@ -13,3 +13,8 @@ vim.pack.add({
 
 vim.cmd.colorscheme("midnight")
 ```
+
+## Credits
+
+This colorscheme was heavily inspired by the VS Code theme
+[Tokyo Night Dark](https://github.com/drewxs/tokyo-night-dark) by Andrew X. Shah
