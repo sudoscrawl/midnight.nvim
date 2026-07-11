@@ -14,7 +14,7 @@ local theme = {
 	search_current = palette.blue_dark,
 	special = palette.purple_dark,
 	constant = palette.pink,
-	parameter = palette.fg_muted,
+	parameter = palette.fg,
 	string = palette.green,
 	highlight = palette.cyan,
 	highlight_strong = palette.cyan_light,
@@ -22,7 +22,7 @@ local theme = {
 	diff_delete = palette.red_dark,
 	type = palette.blue,
 	keyword = palette.purple,
-	entity = palette.red,
+	entity = palette.orange,
 	function_name = palette.blue_dark,
 	error = palette.red,
 }
