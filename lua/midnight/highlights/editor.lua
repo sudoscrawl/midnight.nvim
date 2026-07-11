@@ -71,7 +71,7 @@ function M.load(theme)
 		PmenuThumb = { bg = theme.fg_muted },
 		-- Syntax
 		Comment = {
-			fg = theme.fg_muted,
+			fg = theme.comment,
 			italic = true,
 		},
 		Constant = { fg = theme.constant },
