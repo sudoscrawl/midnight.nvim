@@ -8,8 +8,8 @@ function M.load(theme)
 		["@variable.parameter"] = { fg = theme.parameter },
 		["@variable.member"] = { fg = theme.entity },
 		["@parameter"] = { fg = theme.parameter },
-		["@property"] = { fg = theme.entity },
-		["@field"] = { fg = theme.entity },
+		["@property"] = { fg = theme.fg },
+		["@field"] = { fg = theme.fg },
 		-- Constants
 		["@constant"] = { fg = theme.constant },
 		["@constant.builtin"] = { fg = theme.special },
