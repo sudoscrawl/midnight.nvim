@@ -23,7 +23,7 @@ local theme = {
 	type = palette.blue,
 	keyword = palette.purple,
 	entity = palette.orange,
-	function_name = palette.blue_dark,
+	function_name = palette.blue,
 	error = palette.red,
 }
 
