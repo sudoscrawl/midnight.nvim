@@ -22,7 +22,7 @@ local theme = {
 	diff_delete = palette.red_dark,
 	type = palette.blue,
 	keyword = palette.purple,
-	entity = palette.orange,
+	entity = palette.red,
 	function_name = palette.blue_dark,
 	error = palette.red,
 }
