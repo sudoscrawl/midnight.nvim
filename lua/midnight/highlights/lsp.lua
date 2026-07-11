@@ -7,7 +7,7 @@ function M.load(theme)
 		["@lsp.type.interface"] = { fg = theme.type },
 		["@lsp.type.type"] = { fg = theme.type },
 		["@lsp.type.parameter"] = { fg = theme.parameter },
-		["@lsp.type.property"] = { fg = theme.entity },
+		["@lsp.type.property"] = { fg = theme.fg_subtle },
 		["@lsp.type.function"] = { fg = theme.function_name },
 		["@lsp.type.method"] = { fg = theme.function_name },
 		["@lsp.type.namespace"] = { fg = theme.special },
